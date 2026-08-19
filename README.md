@@ -36,11 +36,18 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
 백엔드 공통 응답은 `{ success, data, error }` 구조로 처리합니다.
 
+## 인증 흐름
+
+- `/login`: JWT 로그인
+- `/signup`: 회원가입 후 자동 로그인
+- `/me`: 토큰 기반 내 정보 조회와 로그아웃
+- `src/features/auth/model/auth-store.ts`: Zustand persist 기반 인증 상태 관리
+
 ## 개발 순서
 
 1. Next.js 프론트엔드 기반 설정 - 완료
 2. 공통 API 타입/클라이언트 구성 - 완료
-3. JWT 로그인/회원가입 흐름 구현
+3. JWT 로그인/회원가입 흐름 구현 - 완료
 4. 공개 게시글 목록/상세 화면 구현
 5. 회원 전용 팀/게시글 관리 화면 구현
 6. SEO/애드센스 준비 페이지 구성

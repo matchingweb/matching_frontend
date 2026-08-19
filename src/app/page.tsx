@@ -1,5 +1,6 @@
 import { CalendarDays, MapPin, Search, ShieldCheck, UsersRound } from "lucide-react";
-import { Button } from "@/shared/ui/button";
+import Link from "next/link";
+import { Button, buttonVariants } from "@/shared/ui/button";
 
 const stats = [
   { label: "게시판", value: "용병 · 팀매칭 · 정기전" },
@@ -40,8 +41,12 @@ export default function HomePage() {
             <a href="#guide">서비스 소개</a>
           </nav>
           <div className="flex items-center gap-2">
-            <Button variant="ghost">로그인</Button>
-            <Button>글쓰기</Button>
+            <Link className={buttonVariants("ghost", "h-10 px-3")} href="/login">
+              로그인
+            </Link>
+            <Link className={buttonVariants("primary")} href="/signup">
+              시작하기
+            </Link>
           </div>
         </div>
       </header>
@@ -61,9 +66,9 @@ export default function HomePage() {
               <Search size={18} />
               매칭 찾기
             </Button>
-            <Button variant="secondary" className="gap-2">
+            <Link className={buttonVariants("secondary", "gap-2")} href="/signup">
               <UsersRound size={18} />팀 등록하기
-            </Button>
+            </Link>
           </div>
         </div>
 

@@ -19,6 +19,12 @@ npm install
 npm run dev
 ```
 
+품질 검증:
+
+```bash
+npm run check
+```
+
 ## 환경 변수
 
 `.env.example`을 기준으로 `.env.local`을 생성합니다.
@@ -55,6 +61,10 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
 AdSense 스크립트는 `NEXT_PUBLIC_ADSENSE_CLIENT` 환경변수가 있을 때만 로드합니다.
 
+## 배포
+
+배포 전 체크리스트는 `DEPLOYMENT.md`를 확인합니다.
+
 ## 공개 페이지
 
 - `/posts`: 게시글 목록, 지역/게시판/구분/상태 필터
@@ -80,4 +90,4 @@ AdSense 스크립트는 `NEXT_PUBLIC_ADSENSE_CLIENT` 환경변수가 있을 때�
 4. 공개 게시글 목록/상세 화면 구현 - 완료
 5. 회원 전용 팀/게시글 관리 화면 구현 - 완료
 6. SEO/애드센스 준비 페이지 구성 - 완료
-7. 배포 및 품질 검증
+7. 배포 및 품질 검증 - 완료

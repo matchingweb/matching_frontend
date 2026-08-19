@@ -8,6 +8,8 @@ import { boardTypeLabels, roleTypeLabels } from "@/entities/post/model/options";
 import { PostStatusBadge } from "@/features/post/ui/post-status-badge";
 import { formatDateTime } from "@/shared/lib/date";
 import { buttonVariants } from "@/shared/ui/button";
+import { SiteFooter } from "@/shared/ui/site-footer";
+import { SiteHeader } from "@/shared/ui/site-header";
 
 export const dynamic = "force-dynamic";
 
@@ -65,19 +67,7 @@ export default async function PostDetailPage({ params }: PostDetailPageProps) {
 
   return (
     <main className="min-h-screen bg-zinc-50 text-zinc-950">
-      <header className="border-b border-zinc-200 bg-white">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-          <Link className="flex items-center gap-2 font-bold" href="/">
-            <span className="flex size-8 items-center justify-center rounded-md bg-emerald-600 text-white">
-              M
-            </span>
-            <span>Matching</span>
-          </Link>
-          <Link className={buttonVariants("secondary")} href="/posts">
-            목록으로
-          </Link>
-        </div>
-      </header>
+      <SiteHeader />
 
       <section className="mx-auto max-w-4xl px-5 py-10">
         {post ? (
@@ -121,6 +111,7 @@ export default async function PostDetailPage({ params }: PostDetailPageProps) {
           </section>
         )}
       </section>
+      <SiteFooter />
     </main>
   );
 }

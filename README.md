@@ -43,6 +43,18 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 - `/me`: 토큰 기반 내 정보 조회와 로그아웃
 - `src/features/auth/model/auth-store.ts`: Zustand persist 기반 인증 상태 관리
 
+## SEO/애드센스 준비
+
+- `/about`: 서비스 소개
+- `/guide`: 매칭 가이드
+- `/privacy`: 개인정보처리방침
+- `/terms`: 이용약관
+- `/contact`: 문의
+- `/robots.txt`: 검색엔진 크롤링 정책
+- `/sitemap.xml`: 공개 페이지 사이트맵
+
+AdSense 스크립트는 `NEXT_PUBLIC_ADSENSE_CLIENT` 환경변수가 있을 때만 로드합니다.
+
 ## 공개 페이지
 
 - `/posts`: 게시글 목록, 지역/게시판/구분/상태 필터
@@ -67,5 +79,5 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 3. JWT 로그인/회원가입 흐름 구현 - 완료
 4. 공개 게시글 목록/상세 화면 구현 - 완료
 5. 회원 전용 팀/게시글 관리 화면 구현 - 완료
-6. SEO/애드센스 준비 페이지 구성
+6. SEO/애드센스 준비 페이지 구성 - 완료
 7. 배포 및 품질 검증

@@ -1,6 +1,8 @@
 import { CalendarDays, MapPin, Search, ShieldCheck, UsersRound } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "@/shared/ui/button";
+import { SiteFooter } from "@/shared/ui/site-footer";
+import { SiteHeader } from "@/shared/ui/site-header";
 
 const stats = [
   { label: "게시판", value: "용병 · 팀매칭 · 정기전" },
@@ -29,27 +31,7 @@ const features = [
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-zinc-50 text-zinc-950">
-      <header className="border-b border-zinc-200 bg-white">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-          <div className="flex items-center gap-2 font-bold">
-            <span className="flex size-8 items-center justify-center rounded-md bg-emerald-600 text-white">
-              M
-            </span>
-            <span>Matching</span>
-          </div>
-          <nav className="hidden items-center gap-6 text-sm font-medium text-zinc-600 md:flex">
-            <a href="#guide">서비스 소개</a>
-          </nav>
-          <div className="flex items-center gap-2">
-            <Link className={buttonVariants("ghost", "h-10 px-3")} href="/login">
-              로그인
-            </Link>
-            <Link className={buttonVariants("primary")} href="/signup">
-              시작하기
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       <section className="mx-auto grid max-w-6xl gap-10 px-5 py-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-20">
         <div>
@@ -112,6 +94,24 @@ export default function HomePage() {
           })}
         </div>
       </section>
+      <section className="mx-auto max-w-6xl px-5 py-12">
+        <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
+          <div>
+            <p className="text-sm font-semibold text-emerald-700">운영 가이드</p>
+            <h2 className="mt-2 text-2xl font-bold">좋은 매칭 글은 신뢰에서 시작합니다</h2>
+          </div>
+          <div className="space-y-4 text-sm leading-7 text-zinc-600">
+            <p>
+              Matching은 단순 게시판이 아니라 실제 경기 성사율을 높이기 위한 정보를 정리합니다.
+              경기 시간, 장소, 수준, 비용, 준비물을 명확히 남기면 불필요한 문의와 노쇼를 줄일 수 있습니다.
+            </p>
+            <Link className={buttonVariants("secondary")} href="/guide">
+              매칭 가이드 보기
+            </Link>
+          </div>
+        </div>
+      </section>
+      <SiteFooter />
     </main>
   );
 }

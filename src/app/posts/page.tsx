@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { postApi } from "@/entities/post/api/post-api";
 import type {
   BoardType,
@@ -11,7 +10,8 @@ import type {
 import { PostCard } from "@/features/post/ui/post-card";
 import { PostEmptyState } from "@/features/post/ui/post-empty-state";
 import { PostFilterForm } from "@/features/post/ui/post-filter-form";
-import { buttonVariants } from "@/shared/ui/button";
+import { SiteFooter } from "@/shared/ui/site-footer";
+import { SiteHeader } from "@/shared/ui/site-header";
 
 export const dynamic = "force-dynamic";
 
@@ -57,24 +57,7 @@ export default async function PostsPage({ searchParams }: PostsPageProps) {
 
   return (
     <main className="min-h-screen bg-zinc-50 text-zinc-950">
-      <header className="border-b border-zinc-200 bg-white">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-          <Link className="flex items-center gap-2 font-bold" href="/">
-            <span className="flex size-8 items-center justify-center rounded-md bg-emerald-600 text-white">
-              M
-            </span>
-            <span>Matching</span>
-          </Link>
-          <div className="flex items-center gap-2">
-            <Link className={buttonVariants("ghost", "px-3")} href="/login">
-              로그인
-            </Link>
-            <Link className={buttonVariants("primary")} href="/posts/new">
-              글쓰기
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       <section className="mx-auto max-w-6xl px-5 py-10">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -107,6 +90,7 @@ export default async function PostsPage({ searchParams }: PostsPageProps) {
           )}
         </div>
       </section>
+      <SiteFooter />
     </main>
   );
 }

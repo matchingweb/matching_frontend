@@ -69,7 +69,7 @@ export default async function PostsPage({ searchParams }: PostsPageProps) {
             <Link className={buttonVariants("ghost", "px-3")} href="/login">
               로그인
             </Link>
-            <Link className={buttonVariants("primary")} href="/signup">
+            <Link className={buttonVariants("primary")} href="/posts/new">
               글쓰기
             </Link>
           </div>

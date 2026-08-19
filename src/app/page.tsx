@@ -1,6 +1,6 @@
 import { CalendarDays, MapPin, Search, ShieldCheck, UsersRound } from "lucide-react";
 import Link from "next/link";
-import { Button, buttonVariants } from "@/shared/ui/button";
+import { buttonVariants } from "@/shared/ui/button";
 
 const stats = [
   { label: "게시판", value: "용병 · 팀매칭 · 정기전" },
@@ -62,10 +62,10 @@ export default function HomePage() {
             축구/풋살 매칭 서비스입니다.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button className="gap-2">
+            <Link className={buttonVariants("primary", "gap-2")} href="/posts">
               <Search size={18} />
               매칭 찾기
-            </Button>
+            </Link>
             <Link className={buttonVariants("secondary", "gap-2")} href="/signup">
               <UsersRound size={18} />팀 등록하기
             </Link>

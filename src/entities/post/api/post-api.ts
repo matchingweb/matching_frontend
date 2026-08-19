@@ -19,6 +19,7 @@ export const postApi = {
     return apiClient<PostResponse[]>("/api/posts", {
       query: params,
       accessToken,
+      cache: "no-store",
     });
   },
 
@@ -31,6 +32,7 @@ export const postApi = {
   getById(postId: number, accessToken?: string) {
     return apiClient<PostResponse>(`/api/posts/${postId}`, {
       accessToken,
+      cache: "no-store",
     });
   },
 
